@@ -32,6 +32,7 @@ Things you may want to cover:
 
 ###Association
 has_many :massages
+has_many :members
 has_many :groups, through :members
 
 ## members_table
@@ -50,6 +51,7 @@ has_many :groups, through :members
 |group_name|string|null: false|
 
 ###Association
+has_many :members
 has_many :users, trough :members
 has_many :massages
 
