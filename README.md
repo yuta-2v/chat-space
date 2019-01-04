@@ -48,17 +48,18 @@ has_many :groups, through :members
 ## groups_table
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ###Association
 has_many :members
-has_many :users, trough :members
+has_many :users, through :members
 has_many :massages
 
 ## massages_table
 |Column|Type|Options|
 |------|----|-------|
 |massage|text|null: false|
+|image|text||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
