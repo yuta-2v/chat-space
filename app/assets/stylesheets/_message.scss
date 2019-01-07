@@ -66,6 +66,7 @@
   }
 
   .chat-main{
+    background-color: rgba(170,170,170, 0.1);
     min-height: 100vh;
     width: calc(100vw - 300px);
     float: right;
@@ -151,7 +152,7 @@
     }
 
     .main-footer{
-      background-color: #aaaaaa;
+      background-color: #cccccc;
       padding: 0 40px;
       margin-top: auto;
 
