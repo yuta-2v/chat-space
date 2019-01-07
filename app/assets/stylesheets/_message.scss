@@ -1,0 +1,224 @@
+*{
+  box-sizing: border-box;
+}
+
+.chat--wrapper{
+  height: 100%;
+  width: 100%;
+
+
+  .side-bar__wrapper{
+    height: 100vh;
+    width: 300px;
+    float: left;
+    background-color: #2f3e51;
+
+    .side-bar__user{
+      background-color: #253141;
+      padding: 0 20px;
+      margin-bottom: 20px;
+      min-height: $headerHeight;
+
+      &-name{
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        display: inline-block;
+        margin: 5.5vh 0;
+        float: left;
+      }
+
+      &-name-icon{
+        display: inline-block;
+        margin: 5.5vh 0.3rem;
+        float: right;
+        color: #ffffff;
+      }
+    }
+
+    ul.side-bar__groups{
+      background-color: #2f3e51;
+      padding: 0 20px;
+
+      .side-bar__group{
+        margin: 20px 0 40px;
+
+        &:hover{
+          opacity:0.9;
+        }
+
+        &-link{
+          text-decoration: none;
+
+          &-name{
+            font-size: 15px;
+            color: #ffffff;
+            margin-bottom: 5px;
+          }
+
+          &-message{
+            font-size: 11px;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .chat-main{
+    background-color: rgba(170,170,170, 0.1);
+    min-height: 100vh;
+    width: calc(100vw - 300px);
+    float: right;
+    display: flex;
+    flex-direction: column;
+
+    &-header{
+      background-color: #ffffff;
+      border: 1px solid #eeeeee;
+      padding: 0 40px;
+      min-height: $headerHeight;
+
+      &__group{
+        min-width: $chatMainWidth;
+        margin-right: 0;
+        float: left;
+        padding-bottom: 0.5rem;
+
+        &-name{
+          font-size: 20px;
+          color: #333333;
+          margin: 35px 0 15px;
+        }
+
+        p.chat-main-header__users{
+          font-size: 12px;
+          color: #999999;
+          float: left;
+          margin-right: 10px;
+        }
+
+        p.chat-main-header__user-name{
+          font-size: 12px;
+          color: #999999;
+          float: left;
+        }
+      }
+
+      &__edit{
+        float: right;
+        top: 1rem;
+
+        &-btn{
+          background-color: #ffffff;
+          border: 2px solid $colorCyan;
+          height: 40px;
+          min-width: 4rem;
+          padding: 0 20px;
+          margin-top: 28px;
+          color: $colorCyan;
+        }
+      }
+    }
+
+    &-body{
+      padding: 0 40px;
+
+      &__messages{
+        margin-top: 46px;
+
+        li.chat-main-body__message{
+
+          .chat-main-body__user{
+
+            p.chat-main-body__name{
+              font-size: 16px;
+              font-weight: bold;
+              color: $darkGrey;
+              display: inline-block;
+            }
+
+            p.chat-main-body__time{
+              font-size: 14px;
+              color: #aaaaaa;
+              display: inline-block;
+            }
+          }
+
+          p.chat-main-body__message{
+            font-size: 14px;
+            color: $darkGrey;
+          }
+        }
+      }
+    }
+
+    &-footer{
+      background-color: #cccccc;
+      padding: 0 40px;
+      margin-top: auto;
+
+      &__input{
+        height: 100%;
+        height: 90px;
+        position: relative;
+
+        &-field{
+          font-size: 16px;
+          color: $darkGrey;
+          top: 20px;
+          height: 50px;
+          position: relative;
+
+          &-textarea{
+            overflow: hidden;
+            resize: none;
+            min-height: 50px;
+            min-width: $chatMainWidth;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          &-image{
+            &--action{
+              display: none;
+
+              &-btn{
+                position: absolute;
+                top: 20px;
+                right: 100px;
+                margin-right: 10px;
+                z-index: 1;
+                background: none;
+              }
+            }
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+        }
+
+        &-btn{
+          .send-btn{
+            background-color: $colorCyan;
+            border: 1px hidden #FFF;
+            margin-left: 15px;
+            height: 50px;
+            width: 5rem;
+            top: 20px;
+            right: 0;
+            color: #ffffff;
+            font-weight: bold;
+            position: absolute;
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+.wrapper
+  .chat--wrapper
+    .side-bar__wrapper
+      .side-bar__user
+        %h5.side-bar__user-name user name
+        = link_to '', class: "side-bar__user-name-icon" do
+          = fa_icon("cog lg")
+        = link_to '', class: "side-bar__user-name-icon" do
+          = fa_icon("pencil-square-o lg")
+      %ul.side-bar__groups
+        %li.side-bar__group
+          = link_to '', class: "side-bar__group-link" do
+            %p.side-bar__group-link-name group name1
+            %p.side-bar__group-link-message message1
+        %li.side-bar__group
+          = link_to '', class: "side-bar__group-link" do
+            %p.side-bar__group-link-name group name2
+            %p.side-bar__group-link-message message2
+
+    .chat-main
+      .chat-main-header
+        .chat-main-header__group
+          %h2.chat-main-header__group-name group
+          %p.chat-main-header__users Members:
+          %p.chat-main-header__user-name user name
+        .chat-main-header__edit
+          %input.chat-main-header__edit-btn{type: "submit", value: "Edit"}
+      .chat-main-body
+        %ul.chat-main-body__messages
+          %li.chat-main-body__message
+            .chat-main-body__user
+              %p.chat-main-body__name user name
+              %p.chat-main-body__time xxxx/xx/xx
+            %p.chat-main-body__message message
+      .chat-main-footer
+        %form.chat-main-footer__input
+          .chat-main-footer__input-field
+            %input.chat-main-footer__input-field-textarea{rows: "1", placeholder: "type a message"}
+            %label.chat-main-footer__input-field-image
+              %input{type: "file", class: "chat-main-footer__input-field-image--action"}
+                = fa_icon("image", class: "chat-main-footer__input-field-image--action-btn")
+          .chat-main-footer__input-btn
+            %input{class: "send-btn", type: "submit", value: "SEND"}
+
