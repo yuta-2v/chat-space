@@ -1,0 +1,44 @@
+.wrapper
+  .chat--wrapper
+    .side-bar__wrapper
+      .side-bar__user
+        %h5.side-user__name user name
+        = link_to '', class: "side-user__icon" do
+          = fa_icon("cog lg")
+        = link_to '', class: "side-user__icon" do
+          = fa_icon("pencil-square-o lg")
+      %ul.side-bar__groups
+        %li.side-bar__group
+          = link_to '', class: "side-bar__group-link" do
+            %p.side-group__name group name1
+            %p.side-group__message message1
+        %li.side-bar__group
+          = link_to '', class: "side-bar__group-link" do
+            %p.side-group__name group name2
+            %p.side-group__message message2
+
+    .chat-main
+      .main-header
+        .main-header__name
+          %h2.main-header-group-name group
+          %p.main-header__users Members:
+          %p.main-header__user-name user name
+        .main-header__edit
+          %input.main-header__edit-btn{type: "submit", value: "Edit"}
+      .main-body
+        %ul.main-body__messages
+          %li.main-body__message
+            .main-body__user
+              %p.main-body__name user name
+              %p.main-body__time xxxx/xx/xx
+            %p.main-body__message message
+      .main-footer
+        %form.main-footer__input-field
+          .input-field
+            %input.main-footer__textarea{rows: "1", placeholder: "type a message"}
+            %label.main-footer__image
+              %input{type: "file", class: "main-footer__image--hidden"}
+                = fa_icon("image", class: "main-footer__image-btn")
+          .input-field-btn
+            %input{class: "main-footer-btn", type: "submit", value: "SEND"}
+

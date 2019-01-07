@@ -1,0 +1,219 @@
+*{
+  box-sizing: border-box;
+}
+
+.chat--wrapper{
+  height: 100%;
+  width: 100%;
+
+
+  .side-bar__wrapper{
+    height: 100vh;
+    width: 300px;
+    float: left;
+    background-color: #2f3e51;
+
+    .side-bar__user{
+      background-color: #253141;
+      padding: 0 20px;
+      margin-bottom: 20px;
+      min-height: $headerHeight;
+
+      h5.side-user__name{
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        display: inline-block;
+        margin: 7vh 0;
+        float: left;
+      }
+
+      .side-user__icon{
+        display: inline-block;
+        margin: 7vh 0.3rem;
+        float: right;
+        color: #ffffff;
+      }
+    }
+
+    ul.side-bar__groups{
+      background-color: #2f3e51;
+      padding: 0 20px;
+
+      li.side-bar__group{
+        margin: 20px 0 40px;
+
+        &:hover{
+          opacity:0.9;
+        }
+
+        a.side-bar__group-link{
+          text-decoration: none;
+
+          p.side-group__name{
+            font-size: 15px;
+            color: #ffffff;
+            margin-bottom: 5px;
+          }
+
+          p.side-group__message{
+            font-size: 11px;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .chat-main{
+    min-height: 100vh;
+    width: calc(100vw - 300px);
+    float: right;
+    display: flex;
+    flex-direction: column;
+
+    .main-header{
+      background-color: #ffffff;
+      border: 1px solid #eeeeee;
+      padding: 0 40px;
+      min-height: $headerHeight;
+
+      .main-header__name{
+        min-width: $chatMainWidth;
+        margin-right: 0;
+        float: left;
+        padding-bottom: 0.5rem;
+
+        h2.main-header-group-name{
+          font-size: 20px;
+          color: #333333;
+          margin: 35px 0 15px;
+        }
+        p.main-header__users{
+          font-size: 12px;
+          color: #999999;
+          float: left;
+          margin-right: 10px;
+        }
+        p.main-header__user-name{
+          font-size: 12px;
+          color: #999999;
+          float: left;
+        }
+      }
+
+      .main-header__edit{
+        float: right;
+        top: 1rem;
+
+        input.main-header__edit-btn{
+          background-color: #ffffff;
+          border: 2px solid $colorCyan;
+          height: 40px;
+          min-width: 4rem;
+          padding: 0 20px;
+          margin-top: 28px;
+          color: $colorCyan;
+        }
+      }
+    }
+
+    .main-body{
+      padding: 0 40px;
+
+      ul.main-body__messages{
+        margin-top: 46px;
+
+        li.main-body__message{
+
+          .main-body__user{
+
+            p.main-body__name{
+              font-size: 16px;
+              font-weight: bold;
+              color: $darkGrey;
+              display: inline-block;
+            }
+
+            p.main-body__time{
+              font-size: 14px;
+              color: #aaaaaa;
+              display: inline-block;
+            }
+          }
+
+          p.main-body__message{
+            font-size: 14px;
+            color: $darkGrey;
+          }
+        }
+      }
+    }
+
+    .main-footer{
+      background-color: #aaaaaa;
+      padding: 0 40px;
+      margin-top: auto;
+
+      form.main-footer__input-field{
+        height: 100%;
+        height: 90px;
+        position: relative;
+
+        .input-field{
+          font-size: 16px;
+          color: $darkGrey;
+          top: 20px;
+          height: 50px;
+          position: relative;
+
+          .main-footer__textarea{
+            overflow: hidden;
+            resize: none;
+            min-height: 50px;
+            min-width: $chatMainWidth;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          label.main-footer__image{
+            .main-footer__image--hidden{
+              display: none;
+            }
+
+            .main-footer__image-btn{
+              position: absolute;
+              top: 20px;
+              right: 100px;
+              margin-right: 10px;
+              z-index: 1;
+              background: none;
+            }
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+        }
+
+        .main-footer-btn{
+          background-color: $colorCyan;
+          border: 1px hidden #FFF;
+          margin-left: 15px;
+          height: 50px;
+          width: 5rem;
+          top: 20px;
+          right: 0;
+          color: #ffffff;
+          font-weight: bold;
+          position: absolute;
+
+            &:hover{
+              cursor: pointer;
+            }
+          }
+      }
+    }
+  }
+}
