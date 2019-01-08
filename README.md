@@ -33,7 +33,7 @@ Things you may want to cover:
 ###Association
 has_many :massages
 has_many :members
-has_many :groups, through :members
+has_many :groups, through: :members
 
 ## members_table
 |Column|Type|Options|
@@ -52,7 +52,7 @@ has_many :groups, through :members
 
 ###Association
 has_many :members
-has_many :users, through :members
+has_many :users, through: :members
 has_many :massages
 
 ## massages_table
