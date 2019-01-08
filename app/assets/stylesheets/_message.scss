@@ -17,37 +17,38 @@
       background-color: #253141;
       padding: 0 20px;
       margin-bottom: 20px;
-      min-height: $headerHeight;
+      height: $headerHeight;
 
       &-name{
         font-size: 16px;
         font-weight: bold;
         color: #ffffff;
         display: inline-block;
-        margin: 5.5vh 0;
+        margin: 15% 0;
         float: left;
       }
 
       &-name-icon{
         display: inline-block;
-        margin: 5.5vh 0.3rem;
+        margin: 15% 0.3rem;
         float: right;
         color: #ffffff;
       }
     }
 
-    ul.side-bar__groups{
+    .side-bar__groups{
       background-color: #2f3e51;
       padding: 0 20px;
 
       .side-bar__group{
-        margin: 20px 0 40px;
+
 
         &:hover{
           opacity:0.9;
         }
 
         &-link{
+          margin: 20px 0 40px;
           text-decoration: none;
 
           &-name{
@@ -77,7 +78,7 @@
       background-color: #ffffff;
       border: 1px solid #eeeeee;
       padding: 0 40px;
-      min-height: $headerHeight;
+      height: $headerHeight;
 
       &__group{
         min-width: $chatMainWidth;
