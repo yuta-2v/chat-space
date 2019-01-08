@@ -1,22 +1,7 @@
 .wrapper
   .chat--wrapper
     .side-bar__wrapper
-      .side-bar__user
-        %h5.side-bar__user-name
-          = current_user.name
-        = link_to edit_user_path(current_user), class: "side-bar__user-name-icon" do
-          = fa_icon("cog lg")
-        = link_to new_group_path, class: "side-bar__user-name-icon" do
-          = fa_icon("pencil-square-o lg")
-      %ul.side-bar__groups
-        %li.side-bar__group
-          = link_to '', class: "side-bar__group-link" do
-            %p.side-bar__group-link-name group name1
-            %p.side-bar__group-link-message message1
-        %li.side-bar__group
-          = link_to '', class: "side-bar__group-link" do
-            %p.side-bar__group-link-name group name2
-            %p.side-bar__group-link-message message2
+      = render 'shared/side_bar'
 
     .chat-main
       .chat-main-header
