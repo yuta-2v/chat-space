@@ -2,8 +2,9 @@
   .chat--wrapper
     .side-bar__wrapper
       .side-bar__user
-        %h5.side-bar__user-name user name
-        = link_to '', class: "side-bar__user-name-icon" do
+        %h5.side-bar__user-name
+          = current_user.name
+        = link_to edit_user_path(current_user), class: "side-bar__user-name-icon" do
           = fa_icon("cog lg")
         = link_to '', class: "side-bar__user-name-icon" do
           = fa_icon("pencil-square-o lg")
