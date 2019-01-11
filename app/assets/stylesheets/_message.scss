@@ -128,25 +128,25 @@
       &__messages{
         margin-top: 46px;
 
-        li.chat-main-body__message{
+        .chat-main-body__message{
 
           .chat-main-body__user{
 
-            p.chat-main-body__name{
+            .chat-main-body__name{
               font-size: 16px;
               font-weight: bold;
               color: $darkGrey;
               display: inline-block;
             }
 
-            p.chat-main-body__time{
+            .chat-main-body__time{
               font-size: 14px;
               color: #aaaaaa;
               display: inline-block;
             }
           }
 
-          p.chat-main-body__message{
+          .chat-main-body__message{
             font-size: 14px;
             color: $darkGrey;
           }

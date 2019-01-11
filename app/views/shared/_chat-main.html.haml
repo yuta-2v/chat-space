@@ -1,0 +1,23 @@
+.chat-main-header
+  .chat-main-header__group
+    %h2.chat-main-header__group-name group
+    %p.chat-main-header__users Members:
+    %p.chat-main-header__user-name user name
+  .chat-main-header__edit
+    %input.chat-main-header__edit-btn{type: "submit", value: "Edit"}
+
+.chat-main-body
+  .chat-main-body__messages
+    = render @messages
+
+.chat-main-footer
+  .chat-main-footer__input
+    = form_for [ @group, @message ] do |f|
+      .chat-main-footer__input-field
+        =f.text_field :message, class: 'chat-main-footer__input-field-textarea', placeholder: 'type a message'
+        .chat-main-footer__input-field-image
+          = f.label :iamge, class: 'chat-main-footer__input-field-image--action' do
+            = fa_icon 'pictue-o', class: 'chat-main-footer__input-field-image--action-btn'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'SEND', class: 'send-btn'
+
