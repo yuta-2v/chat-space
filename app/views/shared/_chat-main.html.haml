@@ -7,12 +7,8 @@
     %input.chat-main-header__edit-btn{type: "submit", value: "Edit"}
 
 .chat-main-body
-  %ul.chat-main-body__messages
-    %li.chat-main-body__message
-      .chat-main-body__user
-        %p.chat-main-body__name user name
-        %p.chat-main-body__time xxxx/xx/xx
-      %p.chat-main-body__message message
+  .chat-main-body__messages
+    = render @messages
 
 .chat-main-footer
   .chat-main-footer__input
