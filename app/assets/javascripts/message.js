@@ -1,19 +1,28 @@
 $(function(){
   function buildHTML(message){
+    var addImage = (message.image.url !== null) ? `<img class = "image_size", src=${message.image.url}>` : ''
     var html = `<div class="chat-main-body__message">
                   <div class="chat-main-body__user">
                     <div class="chat-main-body__name">
-                      ${message.user.name}
+                      ${message.user_name}
+                    </div>
                     <div class="chat-main-body__time">
-                      ${message.created_at.strftime('%Y/%m/%d %H:%M')}
-                  <div class="chat-main-body__message">
-                    ${if message.message.present?}
-                      <p class="chat-main-body__message">
+                      ${message.time}
+                    </div>
+                  </div>
+                  <div class="chat-main-body__message-message">
+                      <p class="chat-main-body__message-message">
                         ${message.message}
-                    ${image_tag message.image.url, class: 'lower-message__image' if message.image.present?}`;
+                      </p>
+                      <p class="chat-main-body__message-image">
+                        ${addImage}
+                      </p>
+                  </div>
+                </div>`;
     return html;
   }
-  $('#new_message').on('submit', function(e){
+
+  $('#new_message').submit(function(e){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
@@ -27,9 +36,10 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.chat-main-footer__input').append(html);
+      $('.chat-main-body').append(html);
       $('.chat-main-footer__input-field-textarea').val('');
       $('.sent-btn').prop('disabled', false);
+      scroll()
     })
   })
 });
