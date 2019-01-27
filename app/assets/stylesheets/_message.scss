@@ -6,12 +6,14 @@
   height: 100%;
   width: 100%;
 
-
   .side-bar__wrapper{
     height: 100vh;
     width: 300px;
     float: left;
     background-color: #2f3e51;
+    position: fixed;
+    top: 0px;
+    left: 0px;
 
     .side-bar__user{
       background-color: #253141;
@@ -79,6 +81,10 @@
       border: 1px solid #eeeeee;
       padding: 0 40px;
       height: $headerHeight;
+      position: fixed;
+      top: 0px;
+      left: 300px;
+      right: 0px;
 
       &__group{
         min-width: $chatMainWidth;
@@ -123,12 +129,11 @@
     }
 
     &-body{
-      padding: 0 40px;
+      max-height: 100%;
+      padding: 110px 40px 90px;
 
-      &__messages{
-        margin-top: 46px;
-
-        .chat-main-body__message{
+        &__message{
+          margin: 23px 0;
 
           .chat-main-body__user{
 
@@ -146,18 +151,21 @@
             }
           }
 
-          .chat-main-body__message{
+          &-message{
             font-size: 14px;
             color: $darkGrey;
           }
         }
-      }
     }
 
     &-footer{
       background-color: #cccccc;
       padding: 0 40px;
       margin-top: auto;
+      position: fixed;
+      bottom: 0px;
+      left: 300px;
+      right: 0px;
 
       &__input{
         height: 100%;
@@ -183,8 +191,6 @@
 
           &-image{
             &--action{
-              display: none;
-
               &-btn{
                 position: absolute;
                 top: 20px;
@@ -192,34 +198,32 @@
                 margin-right: 10px;
                 z-index: 1;
                 background: none;
+                cursor: pointer;
               }
-            }
-
-            &:hover{
-              cursor: pointer;
-            }
-          }
-        }
-
-        &-btn{
-          .send-btn{
-            background-color: $colorCyan;
-            border: 1px hidden #FFF;
-            margin-left: 15px;
-            height: 50px;
-            width: 5rem;
-            top: 20px;
-            right: 0;
-            color: #ffffff;
-            font-weight: bold;
-            position: absolute;
-
-            &:hover{
-              cursor: pointer;
+              .hidden{
+                display:none;
+              }
             }
           }
         }
       }
     }
+  }
+}
+
+.send-btn{
+  background-color: $colorCyan;
+  border: 1px hidden #FFF;
+  margin-left: 15px;
+  height: 50px;
+  width: 5rem;
+  top: 20px;
+  right: 0;
+  color: #ffffff;
+  font-weight: bold;
+  position: absolute;
+
+  &:hover{
+    cursor: pointer;
   }
 }
