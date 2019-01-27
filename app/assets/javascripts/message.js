@@ -43,11 +43,12 @@ function scroll() {
       var html = buildHTML(data);
       $('.chat-main-body').append(html);
       $('.chat-main-footer__input-field-textarea').val('');
-      $('#button').prop('disabled', false);
       scroll()
     })
     .fail(function(data){
       alert('error');
+    })
+    .always(function(){
       $('#button').prop('disabled', false);
     })
   })
