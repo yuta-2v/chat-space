@@ -7,8 +7,7 @@
     %input.chat-main-header__edit-btn{type: "submit", value: "Edit"}
 
 .chat-main-body
-  .chat-main-body__messages
-    = render @messages
+  = render @messages
 
 .chat-main-footer
   .chat-main-footer__input
@@ -16,8 +15,8 @@
       .chat-main-footer__input-field
         =f.text_field :message, class: 'chat-main-footer__input-field-textarea', placeholder: 'type a message'
         .chat-main-footer__input-field-image
-          = f.label :iamge, class: 'chat-main-footer__input-field-image--action' do
-            = fa_icon 'pictue-o', class: 'chat-main-footer__input-field-image--action-btn'
-            = f.file_field :image, class: 'hidden'
-      = f.submit 'SEND', class: 'send-btn'
+          = f.label :iamge, class: 'chat-main-footer__input-field-image--action', for: 'image' do
+            = fa_icon("image", class: "chat-main-footer__input-field-image--action-btn")
+            = f.file_field :image, class: 'hidden', id: 'image'
+      = f.submit 'SEND', class: 'send-btn', id: 'button'
 
