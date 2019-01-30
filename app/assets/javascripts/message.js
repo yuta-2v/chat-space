@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
-    var addImage = (message.image.url !== null) ? `<img class = "image_size", src=${message.image.url}>` : ''
-    var html = `<div class="chat-main-body__message">
+    var addImage = (message.image !== null) ? `<img class = "image_size", src=${message.image}>` : ''
+    var html = `<div class="chat-main-body__message" data-id=${message.id}>
                   <div class="chat-main-body__user">
                     <div class="chat-main-body__name">
                       ${message.user_name}
@@ -52,4 +52,23 @@ $(function(){
       $('#button').prop('disabled', false);
     })
   })
+
+  $(function(){
+    setInterval(update, 5000);
+  });
+
+  function update(){
+    var $message_id = $('.chat-main-body__message:last').data('id');
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: {id: $message_id },
+      dataType: 'json'
+    })
+    .done(function(data){
+      $.each(data, function(i, data){
+        buildHTML(data);
+      });
+    })
+  }
 });
