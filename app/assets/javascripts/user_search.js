@@ -36,5 +36,8 @@ $(function(){
         appendUser('一致するユーザーはいません');
       }
     })
+    .fail(function(){
+      alert('ユーザ検索に失敗しました。');
+    })
   })
 });
