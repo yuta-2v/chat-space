@@ -22,10 +22,10 @@ $(function(){
     return html;
   }
 
-function scroll() {
-  $('body,html').animate(
-    {scrollTop: $('html')[0].scrollHeight});
-}
+  function scroll() {
+    $('body,html').animate(
+      {scrollTop: $('html')[0].scrollHeight});
+  }
 
   $('#new_message').submit(function(e){
     e.preventDefault();
