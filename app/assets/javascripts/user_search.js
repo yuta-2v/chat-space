@@ -56,4 +56,8 @@ $(function(){
     var html = addUser(id,name)
     $(this).parent().remove();
   });
+
+  $($search_result).on('click', ".user-search-remove", function(){
+    $(this).parent().remove();
+  });
 });
